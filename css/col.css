@@ -1,0 +1,20 @@
+
+
+/*  GROUPING  =============================================================================*/ 
+
+.group {
+    zoom:4; /* For IE 6/7 (trigger hasLayout) */
+}
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+
+.col {
+	display: block;
+	float:left;
+	margin: 2% 0 2% 5.2%;
+	font-size:0.7em;
+	
+}
+
+.col:first-child { margin-left: 10; } /* all browsers except IE6 and lower */
+

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Expense Tracker App</title>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Expense Tracker App</h1>
+        <header>
+		
+		
+		<section class="content">
+                <h3 class="secondTitle">Add a new expense item: </h3>
+                <div class="form">
+                    <form id="expForm">
+                        <div class="formLine left">
+                            <span for="type">Type:</span>
+                            <select id="type">
+                                <option value="chooseOne">Choose one...</option>
+                                <option value="Employees">Employees</option>
+                                <option value="Contractors">Contractors</option>
+                                <option value="Office">Office</option>
+                                <option value="Leasing">Leasing</option>
+                                <option value="nre">NRE</option>
+                                <option value="Travels">Travels</option>
+                            </select>
+                        </div>
+                        <div class="formLine right">
+                            <span for="name">Name:</span>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="formLine right">
+                            <span for="amount">Amount:</span>
+                            <input type="text" id="amount" ><br>
+                        </div>
+                        <button type="submit" class="buttonSave" onclick="paste1()" >Employees expense</button>
+						<button type="submit" class="buttonSave" onclick="paste2()" >Contractors expense</button>
+						<button type="submit" class="buttonSave" onclick="paste3()" >Office expense</button>
+						<button type="submit" class="buttonSave" onclick="paste4()" >Leasing expense</button>
+						<button type="submit" class="buttonSave" onclick="paste5()" >NRE expense</button>
+						<button type="submit" class="buttonSave" onclick="paste6()" >Travels expense</button>
+                    </form>
+                </div>
+            </section>
+			
+          <section class="content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th id="type" class="center">Type</th>
+                            <th>Name</th>
+                            <th id="amount">Amount</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseTable">
+						
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="content">
+                <h3 class="thirdTitle">Sum Costs Eval: </h3>
+                <div class="form">
+                    <form id="expForm">
+					
+						Qty1 : <input type="text" name="qty1" id="qty1"/><br>
+						Qty2 : <input type="text" name="qty2" id="qty2"/><br>
+						Qty3 : <input type="text" name="qty3" id="qty3"/><br>
+						Qty4 : <input type="text" name="qty4" id="qty4"/><br>
+						Qty5 : <input type="text" name="qty5" id="qty5"/><br>
+						Qty6 : <input type="text" name="qty6" id="qty6"/><br>
+						<br><br>
+						Total : <input type="text" name="total" id="total"/>
+
+						<a href="javascript:sumInputs()">Sum</a>
+
+                    </form>
+                </div>
+            </section>
+
+
+            <script>
+			
+			window.sumInputs = function() {
+  var inputs = document.getElementsByTagName('input'),
+    result = document.getElementById('total'),
+    sum = 0;
+
+  for (var i = 0; i < inputs.length; i++) {
+    var ip = inputs[i];
+
+    if (ip.name && ip.name.indexOf("total") < 0) {
+      sum += parseInt(ip.value) || 0;
+    }
+
+  }
+
+  result.value = sum;
+}
+
+
+    function paste1() {
+            var pasteText = document.querySelector("#amount");
+            pasteText.focus();
+            document.execCommand("paste");
+			var pasteText1 = document.querySelector("#qty1");
+            pasteText1.value = pasteText.value;
+        }
+
+
+
+    function paste2() {
+            var pasteText = document.querySelector("#amount");
+            pasteText.focus();
+            document.execCommand("paste");
+			var pasteText1 = document.querySelector("#qty2");
+            pasteText1.value = pasteText.value;
+        }
+		
+		    function paste3() {
+            var pasteText = document.querySelector("#amount");
+            pasteText.focus();
+            document.execCommand("paste");
+			var pasteText1 = document.querySelector("#qty3");
+            pasteText1.value = pasteText.value;
+        }
+
+
+
+    function paste4() {
+            var pasteText = document.querySelector("#amount");
+            pasteText.focus();
+            document.execCommand("paste");
+			var pasteText1 = document.querySelector("#qty4");
+            pasteText1.value = pasteText.value;
+        }
+	
+	
+	    function paste5() {
+            var pasteText = document.querySelector("#amount");
+            pasteText.focus();
+            document.execCommand("paste");
+			var pasteText1 = document.querySelector("#qty5");
+            pasteText1.value = pasteText.value;
+        }
+
+
+
+    function paste6() {
+            var pasteText = document.querySelector("#amount");
+            pasteText.focus();
+            document.execCommand("paste");
+			var pasteText1 = document.querySelector("#qty6");
+            pasteText1.value = pasteText.value;
+        }
+	
+	
+
+
+	
+			</script>
+			
+			<script src="app.js"></script>
+</body>
+
+</html>
